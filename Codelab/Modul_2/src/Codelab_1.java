@@ -1,17 +1,30 @@
 class Animal{
-    String name;
-    String type;
-    String sound;
+    private String name;
+    private String type;
+    private String sound;
 
     Animal(String name, String type, String sound){
         this.name = name;
         this.type = type;
         this.sound = sound;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSound() {
+        return sound;
+    }
+
+    public String getType(){
+        return type;
+    }
+
     void tampilkanInfo(){
-        System.out.println("Nama: " + name);
-        System.out.println("Jenis: " + type);
-        System.out.println("Suara: " + sound + "\n");
+        System.out.println("Nama: " + getName());
+        System.out.println("Jenis: " + getType());
+        System.out.println("Suara: " + getSound() + "\n");
     }
 }
 
