@@ -46,13 +46,13 @@ public class LoginSystem{
 
             if (objInput.hasNextInt()) {
                 choice = objInput.nextInt();
-                objInput.nextLine(); // Membersihkan karakter '\n'
+                objInput.nextLine();
 
                 if (choice == 1 || choice == 2) break;
                 else System.out.println("Pilihan tidak valid! Harap pilih 1 atau 2!");
             } else {
                 System.out.println("Pilihan tidak valid! Harap pilih 1 atau 2!");
-                objInput.nextLine(); // Membuang input salah dari buffer
+                objInput.nextLine();
             }
         }
 
