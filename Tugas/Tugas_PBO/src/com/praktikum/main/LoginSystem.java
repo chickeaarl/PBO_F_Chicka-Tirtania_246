@@ -1,13 +1,15 @@
 package com.praktikum.main;
 
 import java.util.Scanner;
+
 import com.praktikum.users.*;
+
 public class LoginSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         Admin admin = new Admin("Admin246", "Password246");
-        Mahasiswa mahasiswa = new Mahasiswa("Chicka Tirtania", "202410370110246", "hfj");
+        Mahasiswa mahasiswa = new Mahasiswa("Chicka Tirtania", "202410370110246");
 
         System.out.println("=== Sistem Login ===");
         System.out.println("1. Login sebagai Admin");
@@ -43,6 +45,7 @@ public class LoginSystem {
                 if (mahasiswa.login(nama, nim)) {
                     mahasiswa.displayInfo();
                     loginBerhasil = true;
+                    mahasiswa.displayAppMenu(scanner);
                 } else {
                     System.out.println("Login Mahasiswa gagal. Nama atau NIM salah.");
                 }

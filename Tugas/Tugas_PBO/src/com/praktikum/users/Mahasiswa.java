@@ -5,28 +5,30 @@ import com.praktikum.action.MahasiswaActions;
 import java.util.Scanner;
 
 public class Mahasiswa extends User implements MahasiswaActions {
-    private final String nim;
 
-    public Mahasiswa(String name, String nim, String alamat){
+    public Mahasiswa(String name, String nim) {
         super(name);
         this.nim = nim;
-        this.alamat = alamat;
+    }
+
+    public String getNim() {
+        return nim;
     }
 
     @Override
-    public boolean login(String inputName, String inputNim){
+    public boolean login(String inputName, String inputNim) {
         return getName().equals(inputName) && getNim().equals(inputNim);
     }
 
     @Override
-    public void displayInfo(){
+    public void displayInfo() {
         System.out.println("Login mahasiswa berhasil");
         System.out.println("Nama: " + getName());
-        System.out.println("NIM: " + nim);
+        System.out.println("NIM: " + getNim());
     }
 
     @Override
-    public void reportItem(Scanner scanner){
+    public void reportItem(Scanner scanner) {
         System.out.println("Masukkan nama barang: ");
         String nama = scanner.nextLine();
 
@@ -43,12 +45,12 @@ public class Mahasiswa extends User implements MahasiswaActions {
     }
 
     @Override
-    public void viewReportedItems(){
+    public void viewReportedItems() {
         System.out.println(">> Fitur Lihat Laporan Belum Tersedia <<");
     }
 
     @Override
-    public void displayAppMenu(Scanner scanner){
+    public void displayAppMenu(Scanner scanner) {
         int choice;
         do {
             System.out.println("Menu Mahasiswa");
@@ -57,7 +59,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
             System.out.println("3. Keluar");
             System.out.print("Pilih Menu: ");
 
-            while (!scanner.hasNextInt()){
+            while (!scanner.hasNextInt()) {
                 System.out.println("Masukkan angka yang valid !(1, 2, 3)");
                 scanner.nextLine();
             }
@@ -65,7 +67,7 @@ public class Mahasiswa extends User implements MahasiswaActions {
             choice = scanner.nextInt();
             scanner.nextLine();
 
-            switch (choice){
+            switch (choice) {
                 case 1:
                     reportItem(scanner);
                     break;
